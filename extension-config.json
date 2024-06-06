@@ -24,7 +24,7 @@
   "configuration": {
     "referenceUnitProp": {
       "type": "admin",
-      "default": "Inhalt",
+      "default": "",
       "destination": "frontend",
       "params": {
         "label": "Reference unit property",
