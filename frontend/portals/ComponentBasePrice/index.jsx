@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import { withCurrentProduct } from '@shopgate/engage/core';
 import { css } from 'glamor';
 import connect from './connector';
+import { tierPricesTableHeadlineColors } from '../../config';
 
 const styles = {
   table: css({
     borderCollapse: 'separate',
   }),
   th: css({
-    background: '#000',
-    color: '#fff',
+    ...tierPricesTableHeadlineColors,
   }),
   td: css({
     padding: 5,
