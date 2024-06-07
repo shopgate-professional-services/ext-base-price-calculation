@@ -47,6 +47,19 @@
         "description": "Unit mapping for the reference multiplicator",
         "type": "json"
       }
+    },
+    "tierPricesTableHeadlineColors": {
+      "type": "admin",
+      "default": {
+        "background": "#000",
+        "color": "#fff"
+      },
+      "destination": "frontend",
+      "params": {
+        "label": "tier prices table headline colors",
+        "description": "Define the headline colors for the tier prices table",
+        "type": "json"
+      }
     }
   }
 }
