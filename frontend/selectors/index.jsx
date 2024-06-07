@@ -28,7 +28,11 @@ export const getReferenceUnit = createSelector(
     const referenceUnit = productData.additionalProperties
       .find(prop => prop.label === referenceUnitProp);
 
-    return referenceUnit.value;
+    if (referenceUnit) {
+      return referenceUnit.value;
+    }
+
+    return null;
   }
 );
 
@@ -41,7 +45,7 @@ export const getTierPrices = createSelector(
       return [];
     }
 
-    if (hasTierPrices) {
+    if (hasTierPrices && referenceUnit) {
       return productData.price.tiers.map(tier => ({
         from: tier.from,
         to: tier.to,
