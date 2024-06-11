@@ -51,7 +51,7 @@ const BasePrice = ({ tierPrices }) => (
       </table>
       :
       null
-  }
+    }
   </div>
 );
 

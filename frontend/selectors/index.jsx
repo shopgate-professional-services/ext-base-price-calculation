@@ -42,7 +42,7 @@ export const getTierPrices = createSelector(
   hasTierPrice,
   (productData, referenceUnit, hasTierPrices) => {
     if (!productData || productData.isFetching) {
-      return [];
+      return null;
     }
 
     if (hasTierPrices && referenceUnit) {
