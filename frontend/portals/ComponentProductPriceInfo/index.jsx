@@ -6,7 +6,7 @@ import connect from './connector';
  * @param {Object} props The component props.
  * @returns {JSX}
  */
-const TierPrices = ({ children, hasTierPrices }) => {
+const ProductPriceInfo = ({ children, hasTierPrices }) => {
   if (hasTierPrices) {
     return null;
   }
@@ -14,4 +14,4 @@ const TierPrices = ({ children, hasTierPrices }) => {
   return children;
 };
 
-export default withCurrentProduct(connect(TierPrices));
+export default withCurrentProduct(connect(ProductPriceInfo));

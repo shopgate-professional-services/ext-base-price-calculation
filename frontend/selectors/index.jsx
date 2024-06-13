@@ -3,14 +3,29 @@ import { createSelector } from 'reselect';
 import { referenceUnitProp } from '../config';
 import { calculateBasePrice, calculateBaseUnit } from '../helpers';
 
-export const hasTierPrice = createSelector(
+export const getHasTierPrice = createSelector(
   getProduct,
   (productData) => {
     if (!productData || productData.isFetching) {
-      return [];
+      return false;
     }
 
     if (productData.price.tiers && productData.price.tiers.length) {
+      return true;
+    }
+
+    return false;
+  }
+);
+
+export const getHasStrikePrice = createSelector(
+  getProduct,
+  (productData) => {
+    if (!productData || productData.isFetching) {
+      return false;
+    }
+
+    if (productData.price.unitPriceStriked && productData.price.unitPriceStriked > 0) {
       return true;
     }
 
@@ -22,7 +37,7 @@ export const getReferenceUnit = createSelector(
   getProduct,
   (productData) => {
     if (!productData || productData.isFetching) {
-      return [];
+      return null;
     }
 
     const referenceUnit = productData.additionalProperties
@@ -39,7 +54,7 @@ export const getReferenceUnit = createSelector(
 export const getTierPrices = createSelector(
   getProduct,
   getReferenceUnit,
-  hasTierPrice,
+  getHasTierPrice,
   (productData, referenceUnit, hasTierPrices) => {
     if (!productData || productData.isFetching) {
       return null;
@@ -58,3 +73,4 @@ export const getTierPrices = createSelector(
     return null;
   }
 );
+

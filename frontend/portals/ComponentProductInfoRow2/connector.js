@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hasTierPrice } from '../../selectors';
+import { getHasTierPrice, getHasStrikePrice } from '../../selectors';
 
 /**
  * @param {Object} state state
@@ -7,7 +7,8 @@ import { hasTierPrice } from '../../selectors';
  * @returns {Object}
  */
 const mapStateToProps = (state, props) => ({
-  showTierPrices: !hasTierPrice(state, props),
+  hasTierPrices: getHasTierPrice(state, props),
+  hasStrikePrice: getHasStrikePrice(state, props),
 });
 
 export default connect(mapStateToProps);
