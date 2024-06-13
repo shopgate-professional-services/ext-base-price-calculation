@@ -1,7 +1,12 @@
 # ext-base-price-calculation
-This extension will calculate the base price based on a property with a reference unit.
 
-Only for tier prices
+#### Important: Only for tier prices
+
+This extension will calculate the base price based on a property with a reference unit. 
+
+
+
+It will show the tier prices in a table with the from to amount, the unitPrice and the corresponding base price.
 
 ## Configuration
 Add the persistent-search-bar extension to your Shopgate Connect deployment config.
