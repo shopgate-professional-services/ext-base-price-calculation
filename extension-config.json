@@ -19,6 +19,12 @@
       "type": "portals",
       "path": "frontend/portals/ComponentProductInfoRow2",
       "target": "product.info.row2"
+    },
+    {
+      "id": "ComponentProductPriceInfo",
+      "type": "portals",
+      "path": "frontend/portals/ComponentProductPriceInfo",
+      "target": "product.price-info"
     }
   ],
   "configuration": {
