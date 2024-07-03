@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withCurrentProduct } from '@shopgate/engage/core';
+import { withCurrentProduct, i18n } from '@shopgate/engage/core';
 import { css } from 'glamor';
+import I18n from '@shopgate/pwa-common/components/I18n/';
 import connect from './connector';
 import { tierPricesTableHeadlineColors } from '../../config';
 
@@ -34,17 +35,23 @@ const BasePrice = ({ tierPrices }) => (
       <table className={styles.table}>
         <thead>
           <tr>
-            <th className={styles.th}>Menge</th>
-            <th className={styles.th}>Stückpreis</th>
-            <th className={styles.th}>Grundpreis</th>
+            <th className={styles.th}>
+              <I18n.Text string="base-price-calculation.quantity" />
+            </th>
+            <th className={styles.th}>
+              <I18n.Text string="base-price-calculation.unit_price" />
+            </th>
+            <th className={styles.th}>
+              <I18n.Text string="base-price-calculation.base_price" />
+            </th>
           </tr>
         </thead>
         <tbody>
           {tierPrices.map((tier, index) => (
             <tr className={styles.tr} key={tier.from}>
               <td className={styles.td}>{index === 0 ? `bis ${tier.to}` : `ab ${tier.from}`}</td>
-              <td className={styles.td}>{`${tier.unitPrice} €`}</td>
-              <td className={styles.td}>{`${tier.basePrice} € / ${tier.baseUnit}`}</td>
+              <td className={styles.td}>{`${tier.unitPrice} ${i18n.text('base-price-calculation.currency')}`}</td>
+              <td className={styles.td}>{`${tier.basePrice} ${i18n.text('base-price-calculation.currency')} / ${tier.baseUnit}`}</td>
             </tr>
           ))}
         </tbody>
