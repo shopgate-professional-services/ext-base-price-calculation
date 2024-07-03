@@ -1,0 +1,8 @@
+{
+  "base-price-calculation": {
+    "quantity": "Menge",
+    "unit_price": "Stückpreis",
+    "base_price": "Grundpreis",
+    "currency": "€"
+  }
+}
