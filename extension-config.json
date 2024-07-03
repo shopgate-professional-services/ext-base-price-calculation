@@ -25,6 +25,11 @@
       "type": "portals",
       "path": "frontend/portals/ComponentProductPriceInfo",
       "target": "product.price-info"
+    },
+    {
+      "type": "translations",
+      "path": "frontend/locale/de-DE.json",
+      "id": "locale/de-DE"
     }
   ],
   "configuration": {
