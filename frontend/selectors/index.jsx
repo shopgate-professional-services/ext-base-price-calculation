@@ -1,7 +1,7 @@
 import { getProduct } from '@shopgate/engage/product';
 import { createSelector } from 'reselect';
 import { referenceUnitProp } from '../config';
-import { calculateBasePrice, calculateBaseUnit } from '../helpers';
+import { calculateBasePrice, calculateBaseUnit, validateReferenceUnit } from '../helpers';
 
 export const getHasTierPrice = createSelector(
   getProduct,
@@ -36,7 +36,7 @@ export const getHasStrikePrice = createSelector(
 export const getReferenceUnit = createSelector(
   getProduct,
   (productData) => {
-    if (!productData || productData.isFetching) {
+    if (!productData || productData.isFetching || !productData.additionalProperties) {
       return null;
     }
 
@@ -61,6 +61,9 @@ export const getTierPrices = createSelector(
     }
 
     if (hasTierPrices && referenceUnit) {
+      if (!validateReferenceUnit(referenceUnit)) {
+        return null;
+      }
       return productData.price.tiers.map(tier => ({
         from: tier.from,
         to: tier.to,
