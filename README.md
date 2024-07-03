@@ -4,12 +4,10 @@
 
 This extension will calculate the base price based on a property with a reference unit. 
 
-
-
 It will show the tier prices in a table with the from to amount, the unitPrice and the corresponding base price.
 
+
 ## Configuration
-Add the persistent-search-bar extension to your Shopgate Connect deployment config.
 
 ```
 {
@@ -41,7 +39,7 @@ Please provide the units all in lowercase.
 Default Values:
 ```json
 {
-  "referenceUnitProp": {
+  "unitMapping": {
     "gramm": 1000,
     "g": 1000,
     "kilogramm": 1,
@@ -49,3 +47,7 @@ Default Values:
   }
 }
 ```
+
+## Dependencies
+
+This extension needs the [ @shopgate-project/products-properties](https://github.com/shopgate-professional-services/ext-products-properties) extension to provide the `referenceUnitProp`.
