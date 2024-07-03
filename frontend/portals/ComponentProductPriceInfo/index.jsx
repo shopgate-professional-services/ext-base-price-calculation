@@ -2,7 +2,7 @@ import { withCurrentProduct } from '@shopgate/engage/core';
 import connect from './connector';
 
 /**
- * The BasePrice component
+ * The ProductPriceInfo component
  * @param {Object} props The component props.
  * @returns {JSX}
  */

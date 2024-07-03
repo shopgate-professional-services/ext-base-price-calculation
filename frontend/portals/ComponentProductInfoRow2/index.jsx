@@ -10,7 +10,7 @@ const styles = {
 };
 
 /**
- * The BasePrice component
+ * The ProductInfoRow2 component
  * @param {Object} props The component props.
  * @returns {JSX}
  */
