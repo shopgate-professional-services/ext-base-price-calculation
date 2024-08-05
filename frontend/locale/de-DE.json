@@ -3,6 +3,8 @@
     "quantity": "Menge",
     "unit_price": "Stückpreis",
     "base_price": "Grundpreis",
-    "currency": "€"
+    "currency": "€",
+    "from": "ab",
+    "to": "bis"
   }
 }

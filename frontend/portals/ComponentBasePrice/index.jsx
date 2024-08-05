@@ -49,7 +49,7 @@ const BasePrice = ({ tierPrices }) => (
         <tbody>
           {tierPrices.map((tier, index) => (
             <tr className={styles.tr} key={tier.from}>
-              <td className={styles.td}>{index === 0 && tier.to ? `bis ${tier.to}` : `ab ${tier.from}`}</td>
+              <td className={styles.td}>{index === 0 && tier.to ? `${i18n.text('base-price-calculation.to')} ${tier.to}` : `${i18n.text('base-price-calculation.from')} ${tier.from}`}</td>
               <td className={styles.td}>{`${tier.unitPrice} ${i18n.text('base-price-calculation.currency')}`}</td>
               <td className={styles.td}>{`${tier.basePrice} ${i18n.text('base-price-calculation.currency')} / ${tier.baseUnit}`}</td>
             </tr>
