@@ -1,0 +1,76 @@
+{
+  "version": "1.0.0",
+  "id": "@shopgate-project/base-price-calculation",
+  "components": [
+    {
+      "id": "ComponentBasePrice",
+      "type": "portals",
+      "path": "frontend/portals/ComponentBasePrice",
+      "target": "product.info.after"
+    },
+    {
+      "id": "ComponentTierPrices",
+      "type": "portals",
+      "path": "frontend/portals/ComponentTierPrices",
+      "target": "product.tiers"
+    },
+    {
+      "id": "ComponentProductInfoRow2",
+      "type": "portals",
+      "path": "frontend/portals/ComponentProductInfoRow2",
+      "target": "product.info.row2"
+    },
+    {
+      "id": "ComponentProductPriceInfo",
+      "type": "portals",
+      "path": "frontend/portals/ComponentProductPriceInfo",
+      "target": "product.price-info"
+    },
+    {
+      "type": "translations",
+      "path": "frontend/locale/de-DE.json",
+      "id": "locale/de-DE"
+    }
+  ],
+  "configuration": {
+    "referenceUnitProp": {
+      "type": "admin",
+      "default": "",
+      "destination": "frontend",
+      "params": {
+        "label": "Reference unit property",
+        "description": "Property for the reference unit.",
+        "type": "text"
+      }
+    },
+    "unitMapping": {
+      "type": "admin",
+      "default": {
+        "gramm": 1000,
+        "g": 1000,
+        "kilogramm": 1,
+        "kg": 1
+      }
+      ,
+      "destination": "frontend",
+      "params": {
+        "label": "unit mapping",
+        "description": "Unit mapping for the reference multiplicator",
+        "type": "json"
+      }
+    },
+    "tierPricesTableHeadlineColors": {
+      "type": "admin",
+      "default": {
+        "background": "#000",
+        "color": "#fff"
+      },
+      "destination": "frontend",
+      "params": {
+        "label": "tier prices table headline colors",
+        "description": "Define the headline colors for the tier prices table",
+        "type": "json"
+      }
+    }
+  }
+}
